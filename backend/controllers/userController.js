@@ -86,7 +86,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
         user.name = req.body.name || user.name
         user.email = req.body.email || user.email
 
-        if(req.body.password) {
+        if (req.body.password) {
             user.password = req.body.password
         }
 
@@ -105,4 +105,12 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     }
 })
 
-module.exports = { authUser, registerUser, getUserProfile,  updateUserProfile }
+// @desc    Get all users
+// @route   Get /api/users
+// @access  Private/Admin
+const getUsers = asyncHandler(async (req, res) => {
+    const users = await User.find({})
+    res.json(users)
+})
+
+module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, getUsers }
