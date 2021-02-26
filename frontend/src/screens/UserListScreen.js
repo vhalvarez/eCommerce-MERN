@@ -54,7 +54,7 @@ const UserListScreen = ({history}) => {
                     </thead>
                     <tbody>
                         {users.map((user) => (
-                            <tr key='user._id'>
+                            <tr key={user._id}>
                                 <td>{user._id}</td>
                                 <td>{user.name}</td>
                                 <td>
@@ -77,7 +77,7 @@ const UserListScreen = ({history}) => {
                                 </td>
                                 <td>
                                     <LinkContainer
-                                        to={`/user/${user._id}/edit`}
+                                        to={`/admin/user/${user._id}/edit`}
                                     >
                                         <Button
                                             variant='light'
