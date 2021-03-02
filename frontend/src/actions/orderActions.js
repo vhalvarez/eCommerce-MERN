@@ -93,7 +93,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
             dispatch(logout())
         }
         dispatch({
-            type: ORDER_PAY_FAIL,
+            type: ORDER_DETAILS_FAIL,
             payload: message,
         })
     }
@@ -175,7 +175,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
             dispatch(logout())
         }
         dispatch({
-            type: ORDER_PAY_FAIL,
+            type: ORDER_LIST_MY_FAIL,
             payload: message,
         })
     }
@@ -212,7 +212,7 @@ export const listOrders = () => async (dispatch, getState) => {
             dispatch(logout())
         }
         dispatch({
-            type: ORDER_PAY_FAIL,
+            type: ORDER_LIST_FAIL,
             payload: message,
         })
     }
